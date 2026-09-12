@@ -31,15 +31,15 @@
             position: relative;
         }
 
-        /* Full page background watermark image */
+        /* Full page background watermark image (shifted down) */
         .page-bg-image {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.08;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 900px;
+            opacity: 0.04;
             z-index: -1;
             pointer-events: none;
         }
@@ -86,19 +86,19 @@
             color: var(--accent-blue);
         }
 
-        /* Hero Section (Image on Left, Content on Right) */
+        /* Hero Section (Optimized Spacing) */
         .hero {
             display: flex;
             flex-direction: row-reverse;
             align-items: center;
-            justify-content: space-between;
-            padding: 160px 8% 100px 8%;
+            justify-content: center;
+            padding: 150px 6% 80px 6%;
             min-height: 100vh;
-            gap: 40px;
+            gap: 60px;
         }
 
         .hero-content {
-            max-width: 600px;
+            max-width: 580px;
         }
 
         .badge {
@@ -111,22 +111,17 @@
             display: inline-block;
             margin-bottom: 20px;
             border: 1px solid rgba(59, 130, 246, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .badge:hover {
-            transform: scale(1.05);
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
             margin-bottom: 20px;
             line-height: 1.2;
         }
 
         .hero-content p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #9CA3AF;
             margin-bottom: 30px;
             line-height: 1.6;
@@ -171,36 +166,25 @@
             color: var(--accent-blue);
         }
 
-        /* Profile & Motion Orbit Section (Resized larger) */
+        /* Profile & Motion Orbit Section */
         .hero-image-container {
             position: relative;
-            width: 440px;
-            height: 440px;
+            width: 420px;
+            height: 420px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.5s ease;
             flex-shrink: 0;
         }
 
-        .hero-image-container:hover {
-            transform: scale(1.03);
-        }
-
         .profile-pic {
-            width: 300px;
-            height: 300px;
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--accent-blue);
             box-shadow: 0 0 40px var(--accent-glow);
             z-index: 2;
-            transition: all 0.5s ease;
-        }
-
-        .profile-pic:hover {
-            box-shadow: 0 0 60px var(--accent-blue);
-            transform: scale(1.02);
         }
 
         .orbit-ring {
@@ -212,15 +196,10 @@
             animation: rotate 20s linear infinite;
         }
 
-        .hero-image-container:hover .orbit-ring {
-            animation-duration: 8s; 
-            border-color: var(--accent-blue);
-        }
-
         .orbit-icon {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             background: var(--card-bg);
             border: 2px solid var(--accent-blue);
             border-radius: 50%;
@@ -237,12 +216,10 @@
         .orbit-icon:hover {
             background: var(--accent-blue);
             color: white;
-            transform: scale(1.25);
-            box-shadow: 0 0 20px var(--accent-blue);
+            transform: scale(1.2);
         }
 
-        /* Positions for 5 Icons evenly distributed along the orbit */
-        .icon-1 { top: 0px; left: calc(50% - 25px); }
+        .icon-1 { top: 0px; left: calc(50% - 24px); }
         .icon-2 { top: 25%; right: 0px; }
         .icon-3 { bottom: 10%; right: 15%; }
         .icon-4 { bottom: 10%; left: 15%; }
@@ -255,7 +232,7 @@
 
         /* Section Common Styles */
         section {
-            padding: 100px 8%;
+            padding: 90px 8%;
         }
 
         .section-title {
@@ -272,11 +249,11 @@
         .section-subtitle {
             text-align: center;
             color: #9CA3AF;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-size: 1.05rem;
         }
 
-        /* Portfolio / Showcase Section (10 initial slots) */
+        /* Portfolio / Showcase Section with Spacing & Specific Labels */
         .portfolio-tabs {
             display: flex;
             justify-content: center;
@@ -306,7 +283,7 @@
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
         .project-card {
@@ -328,20 +305,26 @@
             height: 180px;
             object-fit: cover;
             background: #1f2937;
-            transition: transform 0.5s ease;
-        }
-
-        .project-card:hover .project-thumb {
-            transform: scale(1.08);
         }
 
         .project-info {
             padding: 20px;
         }
 
+        .project-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-blue);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
         .project-info h4 {
             font-size: 1.1rem;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .project-info p {
@@ -358,12 +341,6 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            transition: gap 0.3s ease;
-        }
-
-        .project-link:hover {
-            gap: 12px;
-            text-decoration: underline;
         }
 
         /* About & Cards Grid */
@@ -382,7 +359,7 @@
         }
 
         .info-card:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-8px);
             border-color: var(--accent-blue);
             box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
         }
@@ -391,11 +368,6 @@
             font-size: 2rem;
             color: var(--accent-blue);
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .info-card:hover i {
-            transform: scale(1.2) rotate(5deg);
         }
 
         .info-card h3 {
@@ -422,24 +394,18 @@
             padding: 25px;
             border-radius: 10px;
             text-align: center;
-            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            transition: transform 0.4s ease;
         }
 
         .skill-box:hover {
-            transform: translateY(-8px) scale(1.03);
+            transform: translateY(-6px);
             border-color: var(--accent-blue);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
         }
 
         .skill-box i {
             font-size: 2.5rem;
             color: var(--accent-blue);
             margin-bottom: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-box:hover i {
-            transform: scale(1.25) rotate(-10deg);
         }
 
         .skill-box h4 {
@@ -451,7 +417,7 @@
             font-size: 0.9rem;
         }
 
-        /* Footer & Exact Bottom Contact Info */
+        /* Footer & Contact Info */
         footer {
             background-color: #07090F;
             padding: 60px 8% 30px 8%;
@@ -516,13 +482,13 @@
             justify-content: center;
             text-decoration: none;
             border: 1px solid var(--border-color);
-            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .social-links a:hover {
             background: var(--accent-blue);
             color: white;
-            transform: translateY(-5px) scale(1.1);
+            transform: translateY(-5px);
             box-shadow: 0 0 20px var(--accent-blue);
         }
 
@@ -534,7 +500,7 @@
 </head>
 <body>
 
-    <!-- Full page background watermark image -->
+    <!-- Full page background watermark image (shifted down) -->
     <img src="ChatGPT_Image_Aug_3__2026__11_21_40_AM-removebg-preview.png" alt="Background Watermark" class="page-bg-image">
 
     <!-- Header -->
@@ -572,127 +538,90 @@
                 <div class="orbit-icon icon-4" title="Adobe Illustrator">Ai</div>
                 <div class="orbit-icon icon-5" title="Meta Ads"><i class="fa-solid fa-bullhorn"></i></div>
             </div>
-            <!-- Profile Picture (Resized Larger) -->
+            <!-- Profile Picture -->
             <img src="j.png" alt="MD Kawser Ahmad Profile" class="profile-pic">
         </div>
     </section>
 
-    <!-- Portfolio / Showcase Section (Appears BEFORE About Me, with 10 slots ready for Behance links) -->
+    <!-- Portfolio / Showcase Section with Dedicated Categories -->
     <section id="portfolio">
         <h2 class="section-title">Featured <span>Portfolio</span></h2>
-        <p class="section-subtitle">Explore my recent projects connected directly from Behance</p>
+        <p class="section-subtitle">Explore my recent projects categorized by expertise</p>
         
         <div class="portfolio-tabs">
             <button class="tab-btn active" onclick="filterPortfolio('all')">All Projects</button>
-            <button class="tab-btn" onclick="filterPortfolio('graphic')">Graphic Design</button>
-            <button class="tab-btn" onclick="filterPortfolio('video')">Video Editing</button>
-            <button class="tab-btn" onclick="filterPortfolio('marketing')">Digital Marketing</button>
+            <button class="tab-btn" onclick="filterPortfolio('video')">🎬 Video Editing</button>
+            <button class="tab-btn" onclick="filterPortfolio('graphic')">🎨 Graphic Design</button>
+            <button class="tab-btn" onclick="filterPortfolio('marketing')">📢 Meta Ads</button>
         </div>
 
         <div class="portfolio-grid" id="portfolioGrid">
-            <!-- Slot 1 -->
-            <div class="project-card" data-category="graphic">
-                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&auto=format&fit=crop&q=60" alt="Project 1" class="project-thumb">
+            <!-- Video Editing Projects -->
+            <div class="project-card" data-category="video">
+                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&auto=format&fit=crop&q=60" alt="Video Editing" class="project-thumb">
                 <div class="project-info">
-                    <h4>Brand Identity Design 01</h4>
-                    <p>Complete graphic design branding package showcased on Behance.</p>
+                    <span class="project-tag">🎬 Video Editing</span>
+                    <h4>Cinematic Video Edit 01</h4>
+                    <p>Professional video editing, motion cuts, and color grading.</p>
                     <a href="https://www.behance.net/YOUR_PROJECT_1" target="_blank" class="project-link">View on Behance <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- Slot 2 -->
             <div class="project-card" data-category="video">
-                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&auto=format&fit=crop&q=60" alt="Project 2" class="project-thumb">
+                <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?w=500&auto=format&fit=crop&q=60" alt="Motion Graphics" class="project-thumb">
                 <div class="project-info">
-                    <h4>Cinematic Video Edit 02</h4>
-                    <p>Professional video editing and color grading project.</p>
+                    <span class="project-tag">🎬 Video Editing</span>
+                    <h4>Motion Graphics Reel 02</h4>
+                    <p>Dynamic visual effects and animated transitions.</p>
                     <a href="https://www.behance.net/YOUR_PROJECT_2" target="_blank" class="project-link">View on Behance <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- Slot 3 -->
-            <div class="project-card" data-category="marketing">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format&fit=crop&q=60" alt="Project 3" class="project-thumb">
+            <!-- Graphic Design Projects -->
+            <div class="project-card" data-category="graphic">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&auto=format&fit=crop&q=60" alt="Graphic Design" class="project-thumb">
                 <div class="project-info">
-                    <h4>Meta Ads Campaign 03</h4>
-                    <p>Successful targeted social media advertising campaign.</p>
+                    <span class="project-tag">🎨 Graphic Design</span>
+                    <h4>Brand Identity Design 01</h4>
+                    <p>Complete branding package and creative visual assets.</p>
                     <a href="https://www.behance.net/YOUR_PROJECT_3" target="_blank" class="project-link">View on Behance <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- Slot 4 -->
             <div class="project-card" data-category="graphic">
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60" alt="Project 4" class="project-thumb">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60" alt="Social Kit" class="project-thumb">
                 <div class="project-info">
-                    <h4>Social Media Kit 04</h4>
-                    <p>Creative banners and posts designed for modern brands.</p>
+                    <span class="project-tag">🎨 Graphic Design</span>
+                    <h4>Social Media Kit 02</h4>
+                    <p>Eye-catching social media posts and promotional banners.</p>
                     <a href="https://www.behance.net/YOUR_PROJECT_4" target="_blank" class="project-link">View on Behance <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- Slot 5 -->
-            <div class="project-card" data-category="video">
-                <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?w=500&auto=format&fit=crop&q=60" alt="Project 5" class="project-thumb">
+            <!-- Meta Ads / Digital Marketing Projects -->
+            <div class="project-card" data-category="marketing">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format&fit=crop&q=60" alt="Meta Ads" class="project-thumb">
                 <div class="project-info">
-                    <h4>Motion Graphics Reel 05</h4>
-                    <p>Dynamic motion graphics created with After Effects.</p>
+                    <span class="project-tag">📢 Meta Ads</span>
+                    <h4>Meta Ads Campaign 01</h4>
+                    <p>High-converting targeted ad campaigns for business growth.</p>
                     <a href="https://www.behance.net/YOUR_PROJECT_5" target="_blank" class="project-link">View on Behance <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- Slot 6 -->
-            <div class="project-card" data-category="graphic">
-                <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=500&auto=format&fit=crop&q=60" alt="Project 6" class="project-thumb">
-                <div class="project-info">
-                    <h4>Logo & Guidelines 06</h4>
-                    <p>Minimalist logo concept and brand style guide.</p>
-                    <a href="https://www.behance.net/YOUR_PROJECT_6" target="_blank" class="project-link">View on Behance <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Slot 7 -->
-            <div class="project-card" data-category="video">
-                <img src="https://images.unsplash.com/photo-1574717024227-5ca88ab47249?w=500&auto=format&fit=crop&q=60" alt="Project 7" class="project-thumb">
-                <div class="project-info">
-                    <h4>Commercial Promo 07</h4>
-                    <p>High-end product commercial video edit.</p>
-                    <a href="https://www.behance.net/YOUR_PROJECT_7" target="_blank" class="project-link">View on Behance <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Slot 8 -->
             <div class="project-card" data-category="marketing">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60" alt="Project 8" class="project-thumb">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60" alt="Marketing Strategy" class="project-thumb">
                 <div class="project-info">
-                    <h4>Digital Strategy 08</h4>
-                    <p>Data-driven marketing and growth framework.</p>
-                    <a href="https://www.behance.net/YOUR_PROJECT_8" target="_blank" class="project-link">View on Behance <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Slot 9 -->
-            <div class="project-card" data-category="graphic">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&auto=format&fit=crop&q=60" alt="Project 9" class="project-thumb">
-                <div class="project-info">
-                    <h4>UI/UX Creative Assets 09</h4>
-                    <p>Clean visual elements for web interfaces.</p>
-                    <a href="https://www.behance.net/YOUR_PROJECT_9" target="_blank" class="project-link">View on Behance <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <!-- Slot 10 -->
-            <div class="project-card" data-category="video">
-                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=500&auto=format&fit=crop&q=60" alt="Project 10" class="project-thumb">
-                <div class="project-info">
-                    <h4>YouTube Vlog Edit 10</h4>
-                    <p>Engaging storytelling and clean pacing edits.</p>
-                    <a href="https://www.behance.net/YOUR_PROJECT_10" target="_blank" class="project-link">View on Behance <i class="fa-solid fa-arrow-right"></i></a>
+                    <span class="project-tag">📢 Meta Ads</span>
+                    <h4>Social Growth Strategy 02</h4>
+                    <p>Data-driven ad management and audience targeting framework.</p>
+                    <a href="https://www.behance.net/YOUR_PROJECT_6" target="_blank" class="project-link">View on Behance <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section (Placed AFTER Portfolio) -->
+    <!-- About Section -->
     <section id="about">
         <h2 class="section-title">About <span>Me</span></h2>
         <p class="section-subtitle">Get to know more about my passion and expertise</p>
@@ -738,30 +667,30 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section (Updated with Illustrator & Specializations) -->
     <section id="skills">
         <h2 class="section-title">My <span>Skills</span></h2>
-        <p class="section-subtitle">Tools and technologies I use to bring ideas to life</p>
+        <p class="section-subtitle">Core areas of my expertise and specialization</p>
         <div class="skills-container">
             <div class="skill-box">
                 <i class="fa-solid fa-pen-nib"></i>
-                <h4>Adobe Photoshop</h4>
-                <p>Advanced photo manipulation & graphic design</p>
+                <h4>Graphic Design</h4>
+                <p>Brand identity, vector illustration, and creative layout designing</p>
             </div>
             <div class="skill-box">
                 <i class="fa-solid fa-video"></i>
-                <h4>Premiere Pro</h4>
-                <p>Professional video editing & storytelling</p>
+                <h4>Video Editing</h4>
+                <p>Cinematic cuts, storytelling, and professional post-production</p>
             </div>
             <div class="skill-box">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <h4>After Effects</h4>
-                <p>Motion graphics & visual effects</p>
+                <h4>Motion Graphics</h4>
+                <p>Dynamic visual effects and engaging animated transitions</p>
             </div>
             <div class="skill-box">
                 <i class="fa-solid fa-bullhorn"></i>
-                <h4>Meta Ads Manager</h4>
-                <p>Targeted social media advertising</p>
+                <h4>Digital Marketing</h4>
+                <p>Targeted Meta ads management and audience growth strategies</p>
             </div>
         </div>
     </section>
@@ -804,15 +733,15 @@
         </div>
     </section>
 
-    <!-- Footer with Exact Bottom Contact Info, Phone, and Social Links -->
+    <!-- Footer with Your Provided Phone and Email -->
     <footer id="footer-contact">
         <div class="footer-content">
             <h3>MD Kawser <span>Ahmad</span></h3>
             <p>Let's build something amazing together. Connect with me through my profiles or direct contacts below.</p>
             
             <div class="contact-details">
-                <div><i class="fa-solid fa-phone" style="color: var(--accent-blue); margin-right: 8px;"></i> <a href="tel:+8801700000000">+880 1700-000000</a></div>
-                <div><i class="fa-solid fa-envelope" style="color: var(--accent-blue); margin-right: 8px;"></i> <a href="mailto:kawser@email.com">kawser@email.com</a></div>
+                <div><i class="fa-solid fa-phone" style="color: var(--accent-blue); margin-right: 8px;"></i> <a href="tel:+8801953941415">+880 1953-941415</a></div>
+                <div><i class="fa-solid fa-envelope" style="color: var(--accent-blue); margin-right: 8px;"></i> <a href="mailto:mdkawserahmad2006@gmail.com">mdkawserahmad2006@gmail.com</a></div>
             </div>
 
             <div class="social-links">
