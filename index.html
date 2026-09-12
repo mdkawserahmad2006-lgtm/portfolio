@@ -1,65 +1,1015 @@
-<!-- গ্রাফিক্স ডিজাইন সেকশন -->
-<div class="showcase-category">
-  <h2>🎨 গ্রাফিক্স ডিজাইন</h2>
-  
-  <div class="card-container">
-    
-    <!-- প্রজেক্ট ১: Naturo Media Post -->
-    <div class="card">
-      <img src="your-image-1.jpg" alt="Naturo Media Post">
-      <span class="tag">Graphic Design</span>
-      <h3>Naturo Media Post</h3>
-      <!-- আপনার Behance লিংক যুক্ত করা হয়েছে -->
-      <a href="https://www.behance.net/gallery/255250677/Naturo-Media-Post-Project" target="_blank" class="view-btn">View Project →</a>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Kawser Ahmad - Portfolio</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0B0F19;
+            --card-bg: #111827;
+            --text-main: #F3F4F6;
+            --accent-blue: #3B82F6;
+            --accent-glow: rgba(59, 130, 246, 0.6);
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
 
-    <!-- প্রজেক্ট ২: Dr Service Project -->
-    <div class="card">
-      <img src="your-image-2.jpg" alt="Dr Service Project">
-      <span class="tag">Graphic Design</span>
-      <h3>Dr Service Project</h3>
-      <a href="https://www.behance.net/gallery/255236881/Dr-Service-Project-Media-Post" target="_blank" class="view-btn">View Project →</a>
-    </div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
 
-    <!-- প্রজেক্ট ৩: Facebook Post Project -->
-    <div class="card">
-      <img src="your-image-3.jpg" alt="Facebook Post Project">
-      <span class="tag">Graphic Design</span>
-      <h3>Facebook Post Project</h3>
-      <a href="https://www.behance.net/gallery/255212215/Facebook-Post-Project" target="_blank" class="view-btn">View Project →</a>
-    </div>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            position: relative;
+        }
 
-    <!-- প্রজেক্ট ৪: FB Post Project -->
-    <div class="card">
-      <img src="your-image-4.jpg" alt="FB Post Project">
-      <span class="tag">Graphic Design</span>
-      <h3>FB Post Project</h3>
-      <a href="https://www.behance.net/gallery/254863705/FB-Post-Project" target="_blank" class="view-btn">View Project →</a>
-    </div>
+        /* Full page background watermark image (made clearer) */
+        .page-bg-image {
+            position: fixed;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 900px;
+            opacity: 0.15; /* Increased opacity to make it more visible */
+            z-index: -1;
+            pointer-events: none;
+        }
 
-    <!-- প্রজেক্ট ৫: Ghorer Bazar FB Post -->
-    <div class="card">
-      <img src="your-image-5.jpg" alt="Ghorer Bazar Project">
-      <span class="tag">Graphic Design</span>
-      <h3>Ghorer Bazar FB Post</h3>
-      <a href="https://www.behance.net/gallery/254863423/ghorer-bazar-FB-Post-Project" target="_blank" class="view-btn">View Project →</a>
-    </div>
+        /* Header & Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(11, 15, 25, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
 
-    <!-- প্রজেক্ট ৬: Creative FB Post -->
-    <div class="card">
-      <img src="your-image-6.jpg" alt="Creative FB Post">
-      <span class="tag">Graphic Design</span>
-      <h3>Creative FB Post</h3>
-      <a href="https://www.behance.net/gallery/254884983/FB-Post-Project" target="_blank" class="view-btn">View Project →</a>
-    </div>
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+        }
 
-    <!-- প্রজেক্ট ৭: Minimal Smartwatch -->
-    <div class="card">
-      <img src="your-image-7.jpg" alt="Smartwatch Product Design">
-      <span class="tag">Product Design</span>
-      <h3>Minimal Smartwatch Design</h3>
-      <a href="https://www.behance.net/gallery/254840129/Minimal-Smartwatch-Product-Design-project" target="_blank" class="view-btn">View Project →</a>
-    </div>
+        .logo span {
+            color: var(--accent-blue);
+        }
 
-  </div>
-</div>
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: center;
+            padding: 150px 6% 80px 6%;
+            min-height: 100vh;
+            gap: 60px;
+        }
+
+        .hero-content {
+            max-width: 580px;
+        }
+
+        .badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            color: #9CA3AF;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 0 20px var(--accent-glow);
+            transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            background-color: #2563EB;
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
+            color: var(--accent-blue);
+        }
+
+        /* Profile & Motion Orbit Section Restored */
+        .hero-image-container {
+            position: relative;
+            width: 420px;
+            height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .profile-pic {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-blue);
+            box-shadow: 0 0 40px var(--accent-glow);
+            z-index: 2;
+        }
+
+        .orbit-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px dashed rgba(59, 130, 246, 0.4);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        .orbit-icon {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            background: var(--card-bg);
+            border: 2px solid var(--accent-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 0.75rem;
+            box-shadow: 0 0 12px var(--accent-glow);
+            transition: transform 0.3s ease, background 0.3s, color 0.3s;
+        }
+
+        .orbit-icon:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: scale(1.2);
+        }
+
+        .icon-1 { top: 0px; left: calc(50% - 24px); }
+        .icon-2 { top: 25%; right: 0px; }
+        .icon-3 { bottom: 10%; right: 15%; }
+        .icon-4 { bottom: 10%; left: 15%; }
+        .icon-5 { top: 25%; left: 0px; }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Section Common Styles */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: var(--accent-blue);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #9CA3AF;
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        /* Category Slider Sections */
+        .category-container {
+            margin-bottom: 60px;
+        }
+
+        .category-heading {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 15px;
+        }
+
+        .horizontal-slider {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 15px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-blue) var(--card-bg);
+        }
+
+        .horizontal-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .horizontal-slider::-webkit-scrollbar-track {
+            background: var(--card-bg);
+            border-radius: 4px;
+        }
+
+        .horizontal-slider::-webkit-scrollbar-thumb {
+            background: var(--accent-blue);
+            border-radius: 4px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            min-width: 300px;
+            max-width: 300px;
+            flex-shrink: 0;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.25);
+        }
+
+        .project-thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #1f2937;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-blue);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .project-info p {
+            color: #9CA3AF;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* About & Cards Grid */
+        .about-grid, .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: #9CA3AF;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.4s ease;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-blue);
+        }
+
+        .skill-box i {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+        }
+
+        .skill-box h4 {
+            margin-bottom: 10px;
+        }
+
+        .skill-box p {
+            color: #9CA3AF;
+            font-size: 0.9rem;
+        }
+
+        /* Footer & Contact Info */
+        footer {
+            background-color: #07090F;
+            padding: 60px 8% 30px 8%;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .footer-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-content h3 span {
+            color: var(--accent-blue);
+        }
+
+        .footer-content p {
+            color: #9CA3AF;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            color: #D1D5DB;
+            font-size: 1rem;
+        }
+
+        .contact-details a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent-blue);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .social-links a {
+            background: var(--card-bg);
+            color: var(--text-main);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px var(--accent-blue);
+        }
+
+        .footer-text {
+            color: #6B7280;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Full page background watermark image (Clearer) -->
+    <img src="ChatGPT_Image_Aug_3__2026__11_21_40_AM-removebg-preview.png" alt="Background Watermark" class="page-bg-image">
+
+    <!-- Header -->
+    <header>
+        <div class="logo">MD Kawser <span>Ahmad</span></div>
+        <nav>
+            <ul>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Motion Orbit Restored -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">Creative Professional</span>
+            <h1>MD Kawser Ahmad</h1>
+            <p>Graphic Designer, Video Editor & Digital Marketer helping small businesses stand out with clean design, engaging video content, and practical marketing solutions.</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn-primary">View Portfolio</a>
+                <a href="#contact" class="btn-secondary">Let's Talk</a>
+            </div>
+        </div>
+
+        <div class="hero-image-container">
+            <div class="orbit-ring">
+                <div class="orbit-icon icon-1" title="Adobe Premiere Pro">Pr</div>
+                <div class="orbit-icon icon-2" title="Adobe After Effects">Ae</div>
+                <div class="orbit-icon icon-3" title="Adobe Photoshop">Ps</div>
+                <div class="orbit-icon icon-4" title="Adobe Illustrator">Ai</div>
+                <div class="orbit-icon icon-5" title="Meta Ads"><i class="fa-solid fa-bullhorn"></i></div>
+            </div>
+            <!-- Profile Picture -->
+            <img src="j.png" alt="MD Kawser Ahmad Profile" class="profile-pic">
+        </div>
+    </section>
+
+    <!-- Portfolio Section with Separate Sliders (10 items each) -->
+    <section id="portfolio">
+        <h2 class="section-title">Featured <span>Portfolio</span></h2>
+        <p class="section-subtitle">Explore my work across different specialized categories</p>
+        
+        <!-- 1. Video Editing Slider (10 items) -->
+        <div class="category-container">
+            <h3 class="category-heading">🎬 ভিডিও এডিটিং</h3>
+            <div class="horizontal-slider">
+                <!-- Item 1 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&auto=format&fit=crop&q=60" alt="Video Project" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎬 Video Editing</span>
+                        <h4>Cinematic Cut 01</h4>
+                        <p>Professional video editing and color grading.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?w=500&auto=format&fit=crop&q=60" alt="Video Project" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎬 Video Editing</span>
+                        <h4>Motion Reel 02</h4>
+                        <p>Dynamic visual effects and transitions.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=60" alt="Video Project" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎬 Video Editing</span>
+                        <h4>YouTube Vlog 03</h4>
+                        <p>Engaging storytelling and sound design.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=500&auto=format&fit=crop&q=60" alt="Video Project" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎬 Video Editing</span>
+                        <h4>Promo Video 04</h4>
+                        <p>High-paced promotional commercial cut.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=500&auto=format&fit=crop&q=60" alt="Video Project" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎬 Video Editing</span>
+                        <h4>Music Video 05</h4>
+                        <p>Creative rhythm editing and visual pacing.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=500&auto=format&fit=crop&q=60" alt="Video Project" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎬 Video Editing</span>
+                        <h4>Reels & Shorts 06</h4>
+                        <p>Captivating vertical video edits for social media.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 7 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=500&auto=format&fit=crop&q=60" alt="Video Project" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎬 Video Editing</span>
+                        <h4>Documentary Edit 07</h4>
+                        <p>Structured narrative flow and clean audio cleanup.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 8 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&auto=format&fit=crop&q=60" alt="Video Project" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎬 Video Editing</span>
+                        <h4>Tech Review 08</h4>
+                        <p>Product showcase with slick lower-thirds.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 9 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=500&auto=format&fit=crop&q=60" alt="Video Project" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎬 Video Editing</span>
+                        <h4>Travel Highlight 09</h4>
+                        <p>Stunning transitions and breathtaking color tone.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 10 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format&fit=crop&q=60" alt="Video Project" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎬 Video Editing</span>
+                        <h4>Intro Animation 10</h4>
+                        <p>Custom motion logo and channel opener.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Graphic Design Slider (10 items) -->
+        <div class="category-container">
+            <h3 class="category-heading">🎨 গ্রাফিক্স ডিজাইন</h3>
+            <div class="horizontal-slider">
+                <!-- Item 1 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&auto=format&fit=crop&q=60" alt="Graphic Design" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎨 Graphic Design</span>
+                        <h4>Brand Identity 01</h4>
+                        <p>Complete branding package and creative assets.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60" alt="Graphic Design" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎨 Graphic Design</span>
+                        <h4>Social Media Kit 02</h4>
+                        <p>Eye-catching social media posts & banners.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=500&auto=format&fit=crop&q=60" alt="Graphic Design" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎨 Graphic Design</span>
+                        <h4>Vector Illustration 03</h4>
+                        <p>Detailed custom artwork using Illustrator.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&auto=format&fit=crop&q=60" alt="Graphic Design" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎨 Graphic Design</span>
+                        <h4>Logo Concept 04</h4>
+                        <p>Minimalist and memorable vector logo design.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=500&auto=format&fit=crop&q=60" alt="Graphic Design" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎨 Graphic Design</span>
+                        <h4>Flyer & Poster 05</h4>
+                        <p>Creative print material and promotional flyers.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=500&auto=format&fit=crop&q=60" alt="Graphic Design" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎨 Graphic Design</span>
+                        <h4>UI/UX Creative 06</h4>
+                        <p>App splash screen and landing page wireframe art.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 7 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=500&auto=format&fit=crop&q=60" alt="Graphic Design" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎨 Graphic Design</span>
+                        <h4>Product Packaging 07</h4>
+                        <p>Unique box and container label design layouts.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 8 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1542744094-3a312462c4d0?w=500&auto=format&fit=crop&q=60" alt="Graphic Design" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎨 Graphic Design</span>
+                        <h4>YouTube Thumbnail 08</h4>
+                        <p>High CTR click-inducing custom thumbnail art.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 9 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6c?w=500&auto=format&fit=crop&q=60" alt="Graphic Design" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎨 Graphic Design</span>
+                        <h4>T-Shirt Merch 09</h4>
+                        <p>Trendy apparel typography and illustration concepts.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 10 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&auto=format&fit=crop&q=60" alt="Graphic Design" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">🎨 Graphic Design</span>
+                        <h4>Digital Painting 10</h4>
+                        <p>Photoshop digital retouching and concept creation.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Meta Marketing Slider (10 items) -->
+        <div class="category-container">
+            <h3 class="category-heading">📢 মেটা মার্কেটিং</h3>
+            <div class="horizontal-slider">
+                <!-- Item 1 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format&fit=crop&q=60" alt="Meta Marketing" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">📢 Meta Marketing</span>
+                        <h4>Ad Campaign 01</h4>
+                        <p>High-converting targeted ad campaigns setup.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60" alt="Meta Marketing" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">📢 Meta Marketing</span>
+                        <h4>Growth Strategy 02</h4>
+                        <p>Data-driven audience targeting framework.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1533750349077-cdcd1ec2272f?w=500&auto=format&fit=crop&q=60" alt="Meta Marketing" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">📢 Meta Marketing</span>
+                        <h4>Lead Gen Funnel 03</h4>
+                        <p>Optimizing cost per lead via Facebook ads.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&auto=format&fit=crop&q=60" alt="Meta Marketing" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">📢 Meta Marketing</span>
+                        <h4>Brand Awareness 04</h4>
+                        <p>Scaling local business reach through Instagram ads.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&auto=format&fit=crop&q=60" alt="Meta Marketing" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">📢 Meta Marketing</span>
+                        <h4>E-Commerce ROAS 05</h4>
+                        <p>Maximizing return on ad spend for online stores.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=500&auto=format&fit=crop&q=60" alt="Meta Marketing" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">📢 Meta Marketing</span>
+                        <h4>Retargeting Plan 06</h4>
+                        <p>Custom audience setups and pixel tracking.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 7 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&auto=format&fit=crop&q=60" alt="Meta Marketing" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">📢 Meta Marketing</span>
+                        <h4>Ad Creative Test 07</h4>
+                        <p>A/B testing ad copies and visual hooks.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 8 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&auto=format&fit=crop&q=60" alt="Meta Marketing" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">📢 Meta Marketing</span>
+                        <h4>Audience Scaling 08</h4>
+                        <p>Lookalike audience expansion strategies.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 9 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=500&auto=format&fit=crop&q=60" alt="Meta Marketing" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">📢 Meta Marketing</span>
+                        <h4>Engagement Boost 09</h4>
+                        <p>Community building & messenger chatbot flows.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Item 10 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500&auto=format&fit=crop&q=60" alt="Meta Marketing" class="project-thumb">
+                    <div class="project-info">
+                        <span class="project-tag">📢 Meta Marketing</span>
+                        <h4>Campaign Audit 10</h4>
+                        <p>Performance analysis and budget optimization.</p>
+                        <a href="https://www.behance.net/YOUR_PROJECT" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">My <span>Services</span></h2>
+        <p class="section-subtitle">What I can do to elevate your brand</p>
+        <div class="about-grid">
+            <div class="info-card">
+                <i class="fa-solid fa-palette"></i>
+                <h3>Graphic Design</h3>
+                <p>Creating eye-catching brand identities, social media graphics, banners, and promotional materials that capture attention.</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-film"></i>
+                <h3>Video Editing</h3>
+                <p>Crafting engaging videos, reels, promos, and YouTube content with professional cuts, transitions, and color grading.</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Digital Marketing</h3>
+                <p>Running high-converting Meta and Google ad campaigns, optimizing social channels, and growing your digital reach.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">My <span>Skills</span></h2>
+        <p class="section-subtitle">Core areas of my expertise and specialization</p>
+        <div class="skills-container">
+            <div class="skill-box">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h4>Graphic Design</h4>
+                <p>Brand identity, vector illustration, and creative layout designing</p>
+            </div>
+            <div class="skill-box">
+                <i class="fa-solid fa-video"></i>
+                <h4>Video Editing</h4>
+                <p>Cinematic cuts, storytelling, and professional post-production</p>
+            </div>
+            <div class="skill-box">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h4>Motion Graphics</h4>
+                <p>Dynamic visual effects and engaging animated transitions</p>
+            </div>
+            <div class="skill-box">
+                <i class="fa-solid fa-bullhorn"></i>
+                <h4>Digital Marketing</h4>
+                <p>Targeted Meta ads management and audience growth strategies</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Moved before Education) -->
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <p class="section-subtitle">Get to know more about my passion and expertise</p>
+        <div class="about-grid">
+            <div class="info-card">
+                <i class="fa-solid fa-user-tie"></i>
+                <h3>Who Am I?</h3>
+                <p>I am a multidisciplinary creative professional specializing in visual communication, dynamic video editing, and result-driven digital marketing strategies.</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>My Mission</h3>
+                <p>To help brands and creators establish a powerful online presence through stunning aesthetics, engaging storytelling, and targeted marketing campaigns.</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-rocket"></i>
+                <h3>Why Work With Me?</h3>
+                <p>I combine creative design skills with technical marketing insight to deliver projects that not only look incredible but also drive real business growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">Education & <span>Background</span></h2>
+        <p class="section-subtitle">My academic and professional learning journey</p>
+        <div class="education-grid">
+            <div class="info-card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Academic Education</h3>
+                <p>Completed formal education with a strong foundation in communication, creative arts, and problem-solving methodologies.</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-certificate"></i>
+                <h3>Professional Certifications</h3>
+                <p>Certified in advanced digital marketing, professional video editing workflows, and modern graphic design standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <p class="section-subtitle">Have a project in mind? Let's talk about it</p>
+        <div class="contact-container" style="max-width: 700px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--border-color); padding: 40px; border-radius: 12px;">
+            <form action="#" method="POST">
+                <div style="margin-bottom: 20px;">
+                    <input type="text" placeholder="Your Name" required style="width: 100%; padding: 12px 15px; background: #1f2937; border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-main);">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="email" placeholder="Your Email" required style="width: 100%; padding: 12px 15px; background: #1f2937; border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-main);">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <textarea placeholder="Your Message" required style="width: 100%; height: 140px; padding: 12px 15px; background: #1f2937; border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-main); resize: vertical;"></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer; border: none;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer with Your Phone and Email -->
+    <footer id="footer-contact">
+        <div class="footer-content">
+            <h3>MD Kawser <span>Ahmad</span></h3>
+            <p>Let's build something amazing together. Connect with me through my profiles or direct contacts below.</p>
+            
+            <div class="contact-details">
+                <div><i class="fa-solid fa-phone" style="color: var(--accent-blue); margin-right: 8px;"></i> <a href="tel:+8801953941415">+880 1953-941415</a></div>
+                <div><i class="fa-solid fa-envelope" style="color: var(--accent-blue); margin-right: 8px;"></i> <a href="mailto:mdkawserahmad2006@gmail.com">mdkawserahmad2006@gmail.com</a></div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.behance.net/your-username" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+                <a href="https://www.facebook.com/your-username" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@your-channel" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <p class="footer-text">&copy; 2026 MD Kawser Ahmad. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
